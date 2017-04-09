@@ -12,7 +12,7 @@ $conn = new mysqli($config['sql_server'], $config['sql_user'], $config['sql_pass
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
 
 // echo "Connected successfully";
 
@@ -30,7 +30,7 @@ function json_log($log){
 
     $data = json_encode($log);
     $file = fopen('../'.$config['log_file'], "a");
-    fwrite($file, "\n".$data.",");
+    fwrite($file, $data.",".PHP_EOL);
     fclose($file);
   }
 }
